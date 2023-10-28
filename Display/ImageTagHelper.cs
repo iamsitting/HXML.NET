@@ -13,7 +13,7 @@ public class ImageTagHelper : AbstractBehaviorTagHelper
     {
         base.Process(context, output);
         output.TagName = "image";
-        output.TagMode = TagMode.StartTagAndEndTag;
+        output.TagMode = TagMode.SelfClosing;
         output.Attributes.Add("source", Source);
         output.Attributes.Add("style", Style);
         if (Hide != null)
