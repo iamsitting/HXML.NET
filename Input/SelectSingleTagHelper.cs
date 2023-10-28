@@ -1,38 +1,38 @@
-using HXML.NET.Behavior.Abstracts;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
-namespace HXML.NET.Display;
+namespace HXML.NET.Input;
 
-public class HeaderTagHelper : AbstractBehaviorTagHelper
+public class SelectSingleTagHelper : TagHelper
 {
+    public string Name { get; set; } = null!;
     public string? Id { get; set; }
     public string? Style { get; set; }
-    public bool? SafeArea { get; set; } = false;
     public bool? Hide { get; set; }
-
+    public bool? AllowDeselect { get; set; }
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        base.Process(context, output);
-        output.TagName = "header";
+        output.TagName = "select-single";
         output.TagMode = TagMode.StartTagAndEndTag;
-        if (!string.IsNullOrEmpty(Id))
-        {
-            output.Attributes.Add("id", Id);
-        }
-        
+        output.Attributes.Add("name", Name);
+
         if (!string.IsNullOrEmpty(Style))
         {
             output.Attributes.Add("style", Style);
         }
-        
-        if (SafeArea != null)
+
+        if (!string.IsNullOrEmpty(Id))
         {
-            output.Attributes.Add("safe-area", SafeArea);
+            output.Attributes.Add("id", Id);
         }
-        
+
         if (Hide != null)
         {
             output.Attributes.Add("hide", Hide);
+        }
+
+        if (AllowDeselect != null)
+        {
+            output.Attributes.Add("allow-deselect", AllowDeselect);
         }
     }
 }
