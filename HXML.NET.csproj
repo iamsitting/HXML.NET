@@ -12,6 +12,7 @@
     <PackageId>HXML.NET</PackageId>
     <Authors>Carlos Salamanca</Authors>
     <RepositoryUrl>https://github.com/iamsitting/HXML.NET</RepositoryUrl>
+    <PackageIcon>hv.svg</PackageIcon>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>mobile,xml</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
