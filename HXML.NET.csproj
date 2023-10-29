@@ -6,6 +6,21 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <IsPackable>true</IsPackable>
+    <PackageId>HXML.NET</PackageId>
+    <Authors>Carlos Salamanca</Authors>
+    <RepositoryUrl>https://github.com/iamsitting/HXML.NET</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>mobile,xml</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>
+      Adds ASP.NET Core tag helpers to make writing HXML in Razor easier.
+    </Description>
+  </PropertyGroup>
+
+
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="2.2.0" />
   </ItemGroup>
