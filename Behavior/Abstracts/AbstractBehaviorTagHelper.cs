@@ -6,7 +6,7 @@ namespace HXML.NET.Behavior.Abstracts;
 public class AbstractBehaviorTagHelper : TagHelper, IBehaviorAttributes
 {
     public string? Trigger { get; set; }
-    public string Href { get; set; }
+    public string? Href { get; set; }
     public string? Verb { get; set; }
     public string? Action { get; set; }
     public string? Target { get; set; }
@@ -18,8 +18,11 @@ public class AbstractBehaviorTagHelper : TagHelper, IBehaviorAttributes
 
     private void SetSharedAttributes(TagHelperOutput output)
     {
-        output.Attributes.Add("href", Href);
-        
+        if (!string.IsNullOrEmpty(Href))
+        {
+            output.Attributes.Add("href", Href);
+        }
+
         if (!string.IsNullOrEmpty(Trigger))
         {
             output.Attributes.Add("trigger", Trigger);
